@@ -34,7 +34,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Hitman.ico</ApplicationIcon>
+    <ApplicationIcon>Icon_2.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -83,7 +83,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Hitman.ico" />
+    <Content Include="Icon_2.ico" />
     <None Include="Resources\donatebutton.png" />
     <None Include="Resources\Bar.png" />
   </ItemGroup>

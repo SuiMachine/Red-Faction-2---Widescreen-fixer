@@ -17,13 +17,14 @@ namespace FovChanger
         Process[] myProcess;
         string processName;
      
-        float fov = 95;
-        float fovPlus = 130;
+        float fov = 90;
+        float fovPlus = 120;
+        static float writeAspect = 1.0f;
 
         int ResX = 1280;
         int ResY = 720;
         float disiredAspect = 1.7777777f;
-        float writeAspect = 1.7777777f;
+        
         float readAspect = 1.777777f;
         float prevReadAspect = 1.777777f;
         float readFov = 0;
@@ -35,7 +36,7 @@ namespace FovChanger
         int fovAddress = 0x00211C98;
         int[] offsets = new int[] { 0x64c };
 
-        Keys Key = Keys.P;
+        Keys Key = Keys.Tab;
       
         bool settingInputKey;
 
@@ -125,7 +126,6 @@ namespace FovChanger
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            InitHotkey();
             Timer.Start();
         }
 
@@ -153,7 +153,6 @@ namespace FovChanger
         private void RecalculateValues()
         {
             disiredAspect = ResX * 1.0f / ResY * 1.0f;
-            writeAspect = 1.33333333f / disiredAspect * 1.33333333f;
         }
 
         public void UnHook()
@@ -168,11 +167,8 @@ namespace FovChanger
 
         void ChangeFov()
         {
-            if (foundProcess)
-                if(readFov != fov)
-                {
-                    Trainer.WritePointerFloat(processName, baseAddress+ fovAddress, offsets, fovPlus);
-                }
+            if (foundProcess && readFov != fovPlus)
+                Trainer.WritePointerFloat(processName, baseAddress + fovAddress, offsets, fovPlus);
         }
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)

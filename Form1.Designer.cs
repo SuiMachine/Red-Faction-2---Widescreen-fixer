@@ -75,7 +75,7 @@
             this.T_Input.Name = "T_Input";
             this.T_Input.Size = new System.Drawing.Size(170, 20);
             this.T_Input.TabIndex = 37;
-            this.T_Input.Text = "95";
+            this.T_Input.Text = "90";
             this.T_Input.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.T_Input.TextChanged += new System.EventHandler(this.T_Input_TextChanged);
             // 
@@ -91,7 +91,7 @@
             // C_KeyMode
             // 
             this.C_KeyMode.AutoSize = true;
-            this.C_KeyMode.Location = new System.Drawing.Point(3, 9);
+            this.C_KeyMode.Location = new System.Drawing.Point(11, 9);
             this.C_KeyMode.Name = "C_KeyMode";
             this.C_KeyMode.Size = new System.Drawing.Size(59, 17);
             this.C_KeyMode.TabIndex = 40;
@@ -194,7 +194,8 @@
             this.B_Key.Name = "B_Key";
             this.B_Key.Size = new System.Drawing.Size(132, 24);
             this.B_Key.TabIndex = 41;
-            this.B_Key.Text = "Set Key";
+            this.B_Key.Text = "Set key (Default TAB)";
+            this.B_Key.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.B_Key.UseVisualStyleBackColor = true;
             this.B_Key.CheckedChanged += new System.EventHandler(this.B_Key_CheckedChanged);
             // 
