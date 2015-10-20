@@ -35,10 +35,12 @@ namespace FovChanger
         int aspectAdress = 0x7AC188;
         int fovAddress = 0x00211C98;
         int[] offsets = new int[] { 0x64c };
+        int fovInstruction = 0x00086F76;
 
         Keys Key = Keys.Tab;
       
         bool settingInputKey;
+        bool overwriteInstruction = false;
 
         string labelUrl = "www.pcgamingwiki.com";
         string developerURL = "https://www.twitchalerts.com/donate/suicidemachine";
@@ -163,12 +165,21 @@ namespace FovChanger
         private void KeyGrabber_KeyPress(object sender, EventArgs e)
         {
             ChangeFov();
+            if (overwriteInstruction)
+                ChangeInstruction();
+
         }
 
         void ChangeFov()
         {
             if (foundProcess && readFov != fovPlus)
-                Trainer.WritePointerFloat(processName, baseAddress + fovAddress, offsets, fovPlus);
+                Trainer.WritePointerFloat(myProcess, baseAddress + fovAddress, offsets, fovPlus);
+        }
+
+        void ChangeInstruction()
+        {
+            if (foundProcess)
+                Trainer.WriteFloat(myProcess, baseAddress + fovInstruction, fovPlus);
         }
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
@@ -274,6 +285,17 @@ namespace FovChanger
         {
             displayedFOV = readFov * 1.33333333f / disiredAspect;
             L_fov.Text = displayedFOV.ToString();
+        }
+
+        private void C_OverwriteInstructions_CheckedChanged(object sender, EventArgs e)
+        {
+            if (C_OverwriteInstructions.Checked)
+            {
+                MessageBox.Show("This option can crash a game, but it should prevent from FOV reseting to default value after cutscenes. If you're having problems with the game's stability, disable this option.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                overwriteInstruction = true;
+            }
+            else
+                overwriteInstruction = false;
         }
     }
 }

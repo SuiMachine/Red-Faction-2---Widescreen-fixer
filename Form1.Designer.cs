@@ -47,6 +47,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.L_fov = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.C_OverwriteInstructions = new System.Windows.Forms.CheckBox();
             this.InputPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DeveloperButton)).BeginInit();
             this.KeyPanel.SuspendLayout();
@@ -112,9 +113,9 @@
             this.InputPanel.Controls.Add(this.label1);
             this.InputPanel.Controls.Add(this.T_Input);
             this.InputPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.InputPanel.Location = new System.Drawing.Point(0, 67);
+            this.InputPanel.Location = new System.Drawing.Point(0, 68);
             this.InputPanel.Name = "InputPanel";
-            this.InputPanel.Size = new System.Drawing.Size(302, 168);
+            this.InputPanel.Size = new System.Drawing.Size(302, 184);
             this.InputPanel.TabIndex = 41;
             // 
             // label4
@@ -158,7 +159,7 @@
             // DeveloperButton
             // 
             this.DeveloperButton.Image = global::FovChanger.Properties.Resources.donatebutton;
-            this.DeveloperButton.Location = new System.Drawing.Point(156, 133);
+            this.DeveloperButton.Location = new System.Drawing.Point(156, 149);
             this.DeveloperButton.Name = "DeveloperButton";
             this.DeveloperButton.Size = new System.Drawing.Size(74, 21);
             this.DeveloperButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -169,7 +170,7 @@
             // linkLabel
             // 
             this.linkLabel.AutoSize = true;
-            this.linkLabel.Location = new System.Drawing.Point(20, 137);
+            this.linkLabel.Location = new System.Drawing.Point(20, 153);
             this.linkLabel.Name = "linkLabel";
             this.linkLabel.Size = new System.Drawing.Size(84, 13);
             this.linkLabel.TabIndex = 43;
@@ -179,11 +180,12 @@
             // 
             // KeyPanel
             // 
+            this.KeyPanel.Controls.Add(this.C_OverwriteInstructions);
             this.KeyPanel.Controls.Add(this.B_Key);
             this.KeyPanel.Controls.Add(this.C_KeyMode);
             this.KeyPanel.Location = new System.Drawing.Point(11, 79);
             this.KeyPanel.Name = "KeyPanel";
-            this.KeyPanel.Size = new System.Drawing.Size(278, 37);
+            this.KeyPanel.Size = new System.Drawing.Size(278, 64);
             this.KeyPanel.TabIndex = 41;
             // 
             // B_Key
@@ -207,7 +209,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 24);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(302, 43);
+            this.panel1.Size = new System.Drawing.Size(302, 44);
             this.panel1.TabIndex = 42;
             // 
             // L_fov
@@ -229,11 +231,22 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Current Fov";
             // 
+            // C_OverwriteInstructions
+            // 
+            this.C_OverwriteInstructions.AutoSize = true;
+            this.C_OverwriteInstructions.Location = new System.Drawing.Point(12, 37);
+            this.C_OverwriteInstructions.Name = "C_OverwriteInstructions";
+            this.C_OverwriteInstructions.Size = new System.Drawing.Size(158, 17);
+            this.C_OverwriteInstructions.TabIndex = 42;
+            this.C_OverwriteInstructions.Text = "Overwrite Instruction as well";
+            this.C_OverwriteInstructions.UseVisualStyleBackColor = true;
+            this.C_OverwriteInstructions.CheckedChanged += new System.EventHandler(this.C_OverwriteInstructions_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(302, 235);
+            this.ClientSize = new System.Drawing.Size(302, 252);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.InputPanel);
             this.Controls.Add(this.LB_Running);
@@ -274,6 +287,7 @@
         private System.Windows.Forms.TextBox TB_ResY;
         private System.Windows.Forms.TextBox TB_ResX;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.CheckBox C_OverwriteInstructions;
     }
 }
 

@@ -356,13 +356,12 @@ public class Trainer
             { }
         }
     }
-    public static void WritePointerFloat(string EXENAME, int Pointer, int[] Offset, float Value)
+    public static void WritePointerFloat(Process[] Proc, int Pointer, int[] Offset, float Value)
     {
         checked
         {
             try
             {
-                Process[] Proc = Process.GetProcessesByName(EXENAME);
                 if (Proc.Length != 0)
                 {
                     int Handle = OpenProcess(PROCESS_ALL_ACCESS, 0, Proc[0].Id);
