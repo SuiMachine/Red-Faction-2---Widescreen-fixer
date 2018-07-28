@@ -42,7 +42,7 @@ namespace FovChanger
         bool settingInputKey;
         bool overwriteInstruction = false;
 
-        string labelUrl = "www.pcgamingwiki.com";
+        string labelUrl = "http://www.pcgamingwiki.com";
         string developerURL = "https://www.twitchalerts.com/donate/suicidemachine";
 
 
