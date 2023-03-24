@@ -84,8 +84,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Icon_2.ico" />
-    <None Include="Resources\donatebutton.png" />
-    <None Include="Resources\Bar.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

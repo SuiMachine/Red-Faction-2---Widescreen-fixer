@@ -156,17 +156,6 @@
             this.label3.TabIndex = 45;
             this.label3.Text = "Resolution:";
             // 
-            // DeveloperButton
-            // 
-            this.DeveloperButton.Image = global::FovChanger.Properties.Resources.donatebutton;
-            this.DeveloperButton.Location = new System.Drawing.Point(156, 149);
-            this.DeveloperButton.Name = "DeveloperButton";
-            this.DeveloperButton.Size = new System.Drawing.Size(74, 21);
-            this.DeveloperButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.DeveloperButton.TabIndex = 44;
-            this.DeveloperButton.TabStop = false;
-            this.DeveloperButton.Click += new System.EventHandler(this.DeveloperButton_Click);
-            // 
             // linkLabel
             // 
             this.linkLabel.AutoSize = true;
